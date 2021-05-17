@@ -1,3 +1,4 @@
+// model
 const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
@@ -8,6 +9,7 @@ const userSchema = mongoose.Schema({
     email: {
         type: String,
         trim: true,
+        unique: 1
     },
     password: {
         type: String,
@@ -30,3 +32,7 @@ const userSchema = mongoose.Schema({
     }    
     
 })
+
+const User = mongoose.model('User', userSchema)
+
+module.exports = { User } // module를 다른 곳에서도 사용할 수 있게!
