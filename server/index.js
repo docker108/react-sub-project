@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 5000;
 
 // cookier parser을 가져옴
 const cookieParser = require('cookie-parser');
@@ -37,6 +36,9 @@ mongoose.connect(config.mongoURI,{
 app.get('/', (req, res) => {
   res.send('Hello World~~!')
 })
+
+// client LandingPage에서 받아온 부분
+app.get('/api/hello', (req, res) => res.send('안녕 ㅎ'))
 
 // 회원가입
 app.post('/api/users/register', (req, res) => {
@@ -127,7 +129,7 @@ app.get('/api/users/logout', auth, (req, res) => {
     })
 })
 
-
+const port = 5000;
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
