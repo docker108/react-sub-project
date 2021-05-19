@@ -26,7 +26,7 @@ app.use(cookieParser());
 
 
 const mongoose = require('mongoose');
-const { Router } = require('express');
+// const { Router } = require('express');
 mongoose.connect(config.mongoURI,{
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 }).then(() => console.log('MongoDB Connected...'))
@@ -101,7 +101,7 @@ app.get('/api/users/auth', auth, (req, res) => {
     _id: req.user._id,
     isAdmin: req.user.role === 0 ? false : true,
     isAuth: true,
-    emial: req.user.email,
+    email: req.user.email,
     name: req.user.name,
     lastname: req.user.lastname,
     role: req.user.role,

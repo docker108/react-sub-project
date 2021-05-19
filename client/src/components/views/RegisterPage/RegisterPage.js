@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../../_actions/user_action';
-// import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 function RegisterPage(props) {
 
@@ -37,7 +37,7 @@ function RegisterPage(props) {
         event.preventDefault(); // 페이지 리프레쉬를 막아준다.
 
         if(Password !== ConfirmPassword){
-            return alert('비밀번호와 비밀번호 확인이 같지 않습니다.')
+            return alert('비밀번호와 비밀번호 확인이 같아야 합니다.')
         }
 
         let body = {
@@ -85,8 +85,8 @@ function RegisterPage(props) {
         </div>
     )
 }
-export default RegisterPage
+// export default RegisterPage
 
-// export default withRouter(RegisterPage)
+export default withRouter(RegisterPage)
 // Unhandled Rejection (TypeError): Cannot read property 'push' of undefined
 // 오류가 나면 withRouter로 감싸주고 위에서 다시 임포트해주면 된다.

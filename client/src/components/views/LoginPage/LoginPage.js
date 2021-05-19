@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action';
-// import { withRouter} from 'react';
+import { withRouter } from 'react-router-dom';
 function LoginPage(props) {
     // redux하는 부분
     const dispatch = useDispatch();
@@ -63,5 +63,5 @@ function LoginPage(props) {
         </div>
     )
 }
-export default LoginPage
-// export default withRouter(LoginPage)
+// export default LoginPage
+export default withRouter(LoginPage)
