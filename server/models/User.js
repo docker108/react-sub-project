@@ -104,10 +104,8 @@ userSchema.pre('save', function(next){
 
                 if(err) return cb(err);
                 cb(null, user)
-
             })
         })
-
     }
     
 
